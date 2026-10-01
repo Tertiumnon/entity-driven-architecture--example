@@ -1,16 +1,16 @@
-# Entity Driven Architecture
+# Архитектура на основе сущностей (Entity Driven Architecture)
 
-Entity Driven Architecture - it's a way to make your project simple and extendable.
+Entity Driven Architecture — это способ сделать ваш проект простым и расширяемым.
 
-## Core Rules
+## Основные правила
 
-First of all it's very important to use KISS, SOLID and Clean Architecture principles.
+Прежде всего, очень важно использовать принципы KISS, SOLID и Clean Architecture.
 
-And then you need to understand what is Entity.
+А затем вам нужно понять, что такое Сущность (Entity).
 
-### Entity
+### Сущность (Entity)
 
-Entity is a base unit that exists as a model. 
+Сущность — это базовая единица, существующая в виде модели.
 
 Сущность (entity) - это объект (структура данных), имеющий характеризующие его свойства.
 
@@ -39,42 +39,42 @@ class LocalStorageService {
 }
 ```
 
-## Other rules
+## Другие правила
 
-- No nested components
-- Correct Naming
-- Component-based style
+- Нет вложенных компонентов
+- Правильное именование
+- Компонентный стиль
 
-### No nested folders/components/etc
+### Нет вложенных папок/компонентов/и т.д.
 
-You should use 3 levels.
+Вы должны использовать 3 уровня.
 
 ```text
-# BAD
-entities/              -> 1st level
-  user.interface.ts    -> 2nd level
+# ПЛОХО
+entities/              -> 1-й уровень
+  user.interface.ts    -> 2-й уровень
 ```
 
 ```text
-# GOOD
-entities/              -> 1st level
-  user/                -> 2nd level
-    user.interface.ts  -> 3rd level
+# ХОРОШО
+entities/              -> 1-й уровень
+  user/                -> 2-й уровень
+    user.interface.ts  -> 3-й уровень
 ```
 
-The same for URL's, but as less as possible.
+То же самое для URL, но по возможности меньше.
 
 ```text
-# GOOD
-/users                       -> 1st level
-/users/{{id}}                -> 2nd level
-/profile/settings            -> 2nd level
-/profile/email/confirmation  -> 3rd level
+# ХОРОШО
+/users                       -> 1-й уровень
+/users/{{id}}                -> 2-й уровень
+/profile/settings            -> 2-й уровень
+/profile/email/confirmation  -> 3-й уровень
 ```
 
-### Component-based style
+### Компонентный стиль
 
-You should place all entity-files into one directory, including tests. So you can divide your application into parts that can be moved or deleted without problems.
+Вы должны разместить все файлы сущности в одной директории, включая тесты. Так вы сможете разделить ваше приложение на части, которые можно перемещать или удалять без проблем.
 
 ```text
 entities/
@@ -86,16 +86,16 @@ entities/
     user.constant.ts
 ```
 
-## File structure
+## Структура файлов
 
 ```text
-core          -> First-level (abstract) classes and interfaces (SOLID)
-components    -> Components that can be reused (DRY)
-entities      -> Classes and interfaces for entities
-pages         -> Components for views
+core          -> Классы и интерфейсы первого уровня (абстрактные) (SOLID)
+components    -> Компоненты, которые можно переиспользовать (DRY)
+entities      -> Классы и интерфейсы для сущностей
+pages         -> Компоненты для представлений
 ```
 
-### Example
+### Пример
 
 ```text
 core/
@@ -153,11 +153,11 @@ pages/
     user.constant.ts
 ```
 
-## "Find"-methods
+## Методы "find"
 
-If we can't find something and return type is a primitive, we should return the same type primitive.
+Если мы не можем найти что-то, а тип возвращаемого значения — примитив, мы должны вернуть примитив того же типа.
 
-For example, basic JS methods:
+Например, базовые методы JS:
 
 ```ts
 "car".search("a"); // 1
@@ -165,42 +165,42 @@ For example, basic JS methods:
 "car".search("d"); // -1
 ```
 
-Or may be:
+Или, может быть:
 
 ```ts
 function getUserLastName(user: User): string {}
 ```
 
-If we can't find something and return type is an object, we should return `null`.
+Если мы не можем найти что-то, а тип возвращаемого значения — объект, мы должны вернуть `null`.
 
 ```ts
 function findUser(filters: Filter[]): User | null {}
 ```
 
-If you work with JS, you can use `undefined` value. But when you're getting data from API, you can't get `undefined`. So, you will get `null` value. That's the reason, why I think that `null` value is more preferable.
+Если вы работаете с JS, вы можете использовать значение `undefined`. Но когда вы получаете данные из API, вы не можете получить `undefined`. Поэтому вы получите значение `null`. Вот почему я считаю, что значение `null` предпочтительнее.
 
 ```ts
 function findUser(filters: Filter[]): User | null {}
 ```
 
-And the last case is an array. If you can't find, you will get an empty array.
+И последний случай — массив. Если вы не можете найти, вы получите пустой массив.
 
 ```ts
 function findUsers(filters: Filter[]): User[] {}
 ```
 
-### If you want to return an array of entities
+### Если вы хотите вернуть массив сущностей
 
 ```ts
 function getUsers(filters: Filter[]): User[] {}
 ```
 
-### Throwing errors in methods
+### Бросание ошибок в методах
 
-How do you think, are these methods correct?
+Как вы думаете, эти методы корректны?
 
 ```ts
-// if we know that the first ID is 0
+// если мы знаем, что первый ID — это 0
 function getUserIdByName(name: string): number {
   return userList.find(user => user.name === name)?.id || -1;
 }
@@ -210,25 +210,25 @@ function getUserNameById(id: number): string {
 }
 ```
 
-Let's create more correct methods!
+Давайте создадим более корректные методы!
 
 ```ts
 function findUserIdByName(name: string): number {
   const user = userList.find(user => user.name === name);
-  if (!user) throw new Error(`User with name ${name} was not found.`);
+  if (!user) throw new Error(`Пользователь с именем ${name} не найден.`);
   return user.id;
 }
 
 function findUserNameById(id: number): string {
   const user = userList.find(user => user.id === id);
-  if (!user) throw new Error(`User with id ${id} was not found.`);
+  if (!user) throw new Error(`Пользователь с id ${id} не найден.`);
   return user.name;
 }
 ```
 
-Is that right? I don't think so.
+Это правильно? Не думаю.
 
-## Method as a part of class
+## Метод как часть класса
 
 Если метод является частью класса, то в целях сокращения лучше сократить названия методов, исходя из того, что нам уже известна сущность и нам не нужно повторяться.
 
@@ -238,47 +238,47 @@ class UserService {
 }
 ```
 
-## API classes and methods
+## Классы и методы API
 
-### Typical CRUD service
+### Типичный CRUD-сервис
 
 ```ts
-// GOOD
+// ХОРОШО
 class UserService {
-  find(filters: Filter[]): User[] {} // find all users (using parameters/filters or without them)
-  create(dto: UserCreateDto): User {} // create user
-  get(id: string): User {} // get user by ID or GUID
-  update(id: string, dto: UserUpdateDto): User {} // update user
-  delete(id: string): boolean {} // delete user
+  find(filters: Filter[]): User[] {} // найти всех пользователей (используя параметры/фильтры или без них)
+  create(dto: UserCreateDto): User {} // создать пользователя
+  get(id: string): User {} // получить пользователя по ID или GUID
+  update(id: string, dto: UserUpdateDto): User {} // обновить пользователя
+  delete(id: string): boolean {} // удалить пользователя
 }
 
-// NOT SO GOOD
+// НЕ ОЧЕНЬ ХОРОШО
 class UserService {
-  findAll(filters: Filter[]): User[] {} // find all users (using parameters/filters or without them)
-  findUnique(filters: Filter[]): User {} // find unique user (using parameters/filters)
-  create(dto: UserCreateDto): User {} // create user
-  get(id: string): User {} // get user by ID or GUID
-  update(id: string, dto: UserUpdateDto): User {} // update user
-  delete(id: string): boolean {} // delete user
+  findAll(filters: Filter[]): User[] {} // найти всех пользователей (используя параметры/фильтры или без них)
+  findUnique(filters: Filter[]): User {} // найти уникального пользователя (используя параметры/фильтры)
+  create(dto: UserCreateDto): User {} // создать пользователя
+  get(id: string): User {} // получить пользователя по ID или GUID
+  update(id: string, dto: UserUpdateDto): User {} // обновить пользователя
+  delete(id: string): boolean {} // удалить пользователя
 }
 
-// BAD, because it's complicated
+// ПЛОХО, потому что это сложно
 class UserService {
-  findAll(filters: Filter[]): User[] {} // find all users (using parameters/filters or without them)
-  findUnique(filters: Filter[]): User {} // find unique user (using parameters/filters)
-  search(query: string): User[] {} // find unique user (using parameters/filters)
-  create(dto: UserCreateDto): User {} // create user
-  get(id: string): User {} // get user by ID or GUID
-  update(id: string, dto: UserUpdateDto): User {} // update user
-  delete(id: string): boolean {} // delete user
+  findAll(filters: Filter[]): User[] {} // найти всех пользователей (используя параметры/фильтры или без них)
+  findUnique(filters: Filter[]): User {} // найти уникального пользователя (используя параметры/фильтры)
+  search(query: string): User[] {} // найти уникального пользователя (используя параметры/фильтры)
+  create(dto: UserCreateDto): User {} // создать пользователя
+  get(id: string): User {} // получить пользователя по ID или GUID
+  update(id: string, dto: UserUpdateDto): User {} // обновить пользователя
+  delete(id: string): boolean {} // удалить пользователя
 }
 ```
 
-In case when we use a special word "find", we understand that we want to find something, but we don't know the result. If we don't get it, we should expect an empty array `[]` for "findAll" and `null` - for "find" methods.
+В случае, когда мы используем специальное слово "find", мы понимаем, что хотим найти что-то, но не знаем результат. Если мы не получаем его, мы должны ожидать пустой массив `[]` для "findAll" и `null` — для методов "find".
 
-In case when we use a special word "get", we understand that we want to get existing object with unique identifier. If we don't get it, we should expect an error.
+В случае, когда мы используем специальное слово "get", мы понимаем, что хотим получить существующий объект с уникальным идентификатором. Если мы не получаем его, мы должны ожидать ошибку.
 
-Methods `create`, `get`, `update` and `delete` are typical methods for CRUD operations. Every time when we use these methods, we always use ID of existing object (except `create`), so we don't need to duplicate "ByID" in these methods.
+Методы `create`, `get`, `update` и `delete` — это типичные методы для операций CRUD. Каждый раз, когда мы используем эти методы, мы всегда используем ID существующего объекта (кроме `create`), поэтому нам не нужно дублировать "ByID" в этих методах.
 
 Если класс является утилитарным, то лучше конкретизировать методы, так как они могут быть самые разнообразные.
 
@@ -288,9 +288,9 @@ class UserUtility {
 }
 ```
 
-### Nested methods
+### Вложенные методы
 
-Don't create nested methods with one nested method inside - it's overcomplicated for understanding.
+Не создавайте вложенные методы с одним вложенным методом внутри — это чрезмерно сложно для понимания.
 
 ```ts
 function getUsers() {
@@ -298,7 +298,7 @@ function getUsers() {
 }
 ```
 
-Unfortunately, sometimes we need to use nested methods in cases when nested method is private.
+К сожалению, иногда нам нужно использовать вложенные методы в случаях, когда вложенный метод является приватным.
 
 ```ts
 class SomeComponent {
