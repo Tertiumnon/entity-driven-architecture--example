@@ -1,0 +1,36 @@
+{
+  "name": "blog-platform",
+  "version": "1.0.0",
+  "description": "Real-world blog platform demonstrating entity-driven architecture with Bun + Elysia backend and SolidJS frontend",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/backend",
+    "packages/frontend",
+    "packages/shared"
+  ],
+  "scripts": {
+    "backend:dev": "bun --cwd packages/backend dev",
+    "backend:build": "bun --cwd packages/backend build",
+    "backend:test": "bun --cwd packages/backend test",
+    "frontend:dev": "bun --cwd packages/frontend dev",
+    "frontend:build": "bun --cwd packages/frontend build",
+    "frontend:test": "bun --cwd packages/frontend test"
+  },
+  "keywords": [
+    "entity-driven",
+    "architecture",
+    "typescript",
+    "bun",
+    "elysia",
+    "solidjs",
+    "blog-platform"
+  ],
+  "author": "Tertium Development Team",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.2.0"
+  }
+}
