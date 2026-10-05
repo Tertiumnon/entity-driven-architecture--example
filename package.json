@@ -15,7 +15,10 @@
     "backend:test": "bun --cwd packages/backend test",
     "frontend:dev": "bun --cwd packages/frontend dev",
     "frontend:build": "bun --cwd packages/frontend build",
-    "frontend:test": "bun --cwd packages/frontend test"
+    "frontend:test": "bun --cwd packages/frontend test",
+    "release:patch": "bun node_modules/@tertium/js/scripts/release/release.ts patch",
+    "release:minor": "bun node_modules/@tertium/js/scripts/release/release.ts minor",
+    "release:major": "bun node_modules/@tertium/js/scripts/release/release.ts major"
   },
   "keywords": [
     "entity-driven",
@@ -29,6 +32,7 @@
   "author": "Tertium Development Team",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@tertium/js": "^3.2.0",
     "@types/bun": "latest",
     "@types/node": "^20.0.0",
     "typescript": "^5.2.0"
