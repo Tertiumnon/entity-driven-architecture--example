@@ -6,9 +6,9 @@
  */
 
 import type { Elysia } from 'elysia';
-import { UserService } from '../entities/user/user.service';
-import type { UserUpdateDto } from '../entities/user/user.types';
-import { ArticleService } from '../entities/article/article.service';
+import { UserService } from '../../entities/user/user.service';
+import type { UserUpdateDto } from '../../entities/user/user.types';
+import { ArticleService } from '../../entities/article/article.service';
 
 export const registerUserRoutes = (app: Elysia) => {
   const userService = new UserService();

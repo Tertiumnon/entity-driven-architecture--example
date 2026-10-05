@@ -4,10 +4,10 @@
 
 import { Elysia } from 'elysia';
 import { cors } from '@elysia/cors';
-import { registerAuthRoutes } from './routes/auth.routes';
-import { registerUserRoutes } from './routes/users.routes';
-import { registerArticleRoutes } from './routes/articles.routes';
-import { registerCommentRoutes } from './routes/comments.routes';
+import { registerAuthRoutes } from './routes/auth/auth.routes';
+import { registerUserRoutes } from './routes/users/users.routes';
+import { registerArticleRoutes } from './routes/articles/articles.routes';
+import { registerCommentRoutes } from './routes/comments/comments.routes';
 
 export const createApp = () => {
   let app = new Elysia({ prefix: '/api' })

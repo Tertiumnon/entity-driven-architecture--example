@@ -8,8 +8,8 @@
  */
 
 import type { Elysia } from 'elysia';
-import { ArticleService } from '../entities/article/article.service';
-import type { ArticleCreateDto, ArticleUpdateDto } from '../entities/article/article.types';
+import { ArticleService } from '../../entities/article/article.service';
+import type { ArticleCreateDto, ArticleUpdateDto } from '../../entities/article/article.types';
 
 export const registerArticleRoutes = (app: Elysia) => {
   const articleService = new ArticleService();

@@ -7,8 +7,8 @@
  */
 
 import type { Elysia } from 'elysia';
-import { CommentService } from '../entities/comment/comment.service';
-import type { CommentCreateDto, CommentUpdateDto } from '../entities/comment/comment.types';
+import { CommentService } from '../../entities/comment/comment.service';
+import type { CommentCreateDto, CommentUpdateDto } from '../../entities/comment/comment.types';
 
 export const registerCommentRoutes = (app: Elysia) => {
   const commentService = new CommentService();
