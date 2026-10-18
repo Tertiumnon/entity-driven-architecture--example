@@ -27,7 +27,7 @@
     "blog-platform"
   ],
   "author": "Tertium Development Team",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^20.0.0",
