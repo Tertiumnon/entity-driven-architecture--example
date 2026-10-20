@@ -11,56 +11,6 @@ A complete, working implementation of entity-driven development principles. User
 
 ---
 
-## Quick Start
-
-### Prerequisites
-- Bun (https://bun.sh)
-- Node.js (for frontend tooling compatibility)
-
-### 1. Install Dependencies
-
-```bash
-bun install
-```
-
-### 2. Start Development Servers
-
-```bash
-# Terminal 1: Backend (runs on :3001)
-bun backend:dev
-
-# Terminal 2: Frontend (runs on :3000)
-bun frontend:dev
-```
-
-### 3. Explore the Code
-
-**Backend** (`packages/backend/src/`)
-```
-├── core/              ← Shared utilities (database, middleware, config)
-├── entities/          ← Business logic (user, article, comment, tag)
-│   └── user/
-│       ├── user.types.ts       ← Interfaces and types
-│       ├── user.constants.ts   ← Constants
-│       ├── user.mock.ts        ← Mock data
-│       ├── user.service.ts     ← Business logic
-│       ├── user.repository.ts  ← Database access
-│       └── user.test.ts        ← Tests
-├── routes/            ← API endpoints (auth, users, articles, comments)
-└── app.ts             ← Elysia app configuration
-```
-
-**Frontend** (`packages/frontend/src/`)
-```
-├── core/              ← Shared utilities (HTTP, state, router)
-├── entities/          ← Business logic mirroring backend
-├── components/        ← Reusable UI components
-├── pages/             ← Full-page components
-└── App.tsx            ← Root component
-```
-
----
-
 ## Learn Entity-Driven Development
 
 **New to entity-driven development?**
@@ -216,44 +166,6 @@ interface UserProfileResponseDto {
 
 ---
 
-## Technology Stack
-
-- **TypeScript** — Type safety and clarity
-- **Vite** — Fast build and dev server
-- **Vitest** — Fast unit testing
-- **ESLint + Prettier** — Code quality and formatting
-- **Vanilla HTML/CSS/JS** — No framework lock-in
-
----
-
-## How to Run Examples
-
-### Development
-
-```bash
-npm install
-npm run dev
-npm run test              # Run tests in watch mode
-npm run test:coverage     # Run tests with coverage
-```
-
-### Production Build
-
-```bash
-npm run build             # Compile and bundle
-npm run preview           # Preview production build
-```
-
-### Code Quality
-
-```bash
-npm run type-check        # Check TypeScript types
-npm run lint              # Check linting
-npm run lint:fix          # Fix linting issues
-```
-
----
-
 ## Related Documentation
 
 **Learn the theory:**
@@ -262,6 +174,11 @@ npm run lint:fix          # Fix linting issues
 - [Architecture Guide](https://github.com/Tertium/know-your-entity/blob/main/docs/06-architecture/)
 
 ---
+
+## Documentation
+
+- [Install](docs/INSTALL.md)
+- [Development](docs/DEVELOPMENT.md)
 
 ## License
 
