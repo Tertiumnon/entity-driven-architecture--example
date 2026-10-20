@@ -1,6 +1,6 @@
 # Blog Platform - Entity-Driven Architecture
 
-> **Real-world blog platform demonstrating entity-driven architecture with Bun + Elysia backend and SolidJS frontend.**
+Blog platform built with entity-driven architecture: Bun and Elysia backend, SolidJS frontend.
 
 A complete, working implementation of entity-driven development principles. Users create and manage articles, readers browse and comment.
 
@@ -15,8 +15,8 @@ A complete, working implementation of entity-driven development principles. User
 
 **New to entity-driven development?**
 
-1. **[Know Your Entity](https://github.com/Tertium/know-your-entity)** — Complete documentation
-2. **[What is an Entity?](https://github.com/Tertium/know-your-entity/blob/main/docs/01-introduction/what-is-entity.md)** — Foundational concepts
+1. **[Entity-Driven Architecture](https://github.com/Tertiumnon/entity-driven-architecture)** — Complete documentation
+2. **[What is an Entity?](https://github.com/Tertiumnon/entity-driven-architecture/blob/main/docs/01-introduction/what-is-entity.md)** — Foundational concepts
 3. **This codebase** — Practical working examples
 
 ---
@@ -36,8 +36,8 @@ A complete, working implementation of entity-driven development principles. User
 - Mock data setup
 
 **Related theory:**
-- [What is an Entity?](https://github.com/Tertium/know-your-entity/blob/main/docs/01-introduction/what-is-entity.md)
-- [Service Layer Pattern](https://github.com/Tertium/know-your-entity/blob/main/docs/04-backend-patterns/service-layer.md)
+- [What is an Entity?](https://github.com/Tertiumnon/entity-driven-architecture/blob/main/docs/01-introduction/what-is-entity.md)
+- [Backend Patterns](https://github.com/Tertiumnon/entity-driven-architecture/blob/main/docs/04-backend-patterns/)
 
 ---
 
@@ -56,9 +56,9 @@ A complete, working implementation of entity-driven development principles. User
 - Full CRUD for each entity
 
 **Related theory:**
-- [Flat Entities](https://github.com/Tertium/know-your-entity/blob/main/docs/03-entity-structure/flat-entities.md)
-- [DTO vs Domain Model](https://github.com/Tertium/know-your-entity/blob/main/docs/03-entity-structure/dto-vs-domain.md)
-- [Folder Structure](https://github.com/Tertium/know-your-entity/blob/main/docs/06-architecture/folder-structure.md)
+- [Flat Entities](https://github.com/Tertiumnon/entity-driven-architecture/blob/main/docs/03-entity-structure/flat-entities.md)
+- [DTO vs Domain Model](https://github.com/Tertiumnon/entity-driven-architecture/blob/main/docs/03-entity-structure/dto-vs-domain.md)
+- [Folder Structure](https://github.com/Tertiumnon/entity-driven-architecture/blob/main/docs/06-architecture/folder-structure.md)
 
 ---
 
@@ -73,7 +73,7 @@ A complete, working implementation of entity-driven development principles. User
 - Tag (categorization)
 
 **Related theory:**
-- [Relationships & References](https://github.com/Tertium/know-your-entity/blob/main/docs/03-entity-structure/relationships.md)
+- [Relationships & References](https://github.com/Tertiumnon/entity-driven-architecture/blob/main/docs/03-entity-structure/relationships.md)
 
 ---
 
@@ -169,17 +169,11 @@ interface UserProfileResponseDto {
 ## Related Documentation
 
 **Learn the theory:**
-- [know-your-entity](https://github.com/Tertium/know-your-entity) — Complete documentation
-- [Naming Conventions](https://github.com/Tertium/know-your-entity/blob/main/docs/02-naming-conventions/)
-- [Architecture Guide](https://github.com/Tertium/know-your-entity/blob/main/docs/06-architecture/)
+- [entity-driven-architecture](https://github.com/Tertiumnon/entity-driven-architecture) — Complete documentation
+- [Naming Conventions](https://github.com/Tertiumnon/entity-driven-architecture/blob/main/docs/02-naming-conventions/)
+- [Architecture Guide](https://github.com/Tertiumnon/entity-driven-architecture/blob/main/docs/06-architecture/)
 
 ---
-
-## License
-
-Internal use only — Tertium Development Team
-
-**Last Updated**: 2026-06-29
 
 ## Support
 
