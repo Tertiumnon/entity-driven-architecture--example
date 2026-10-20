@@ -175,11 +175,6 @@ interface UserProfileResponseDto {
 
 ---
 
-## Documentation
-
-- [Install](docs/INSTALL.md)
-- [Development](docs/DEVELOPMENT.md)
-
 ## License
 
 Internal use only — Tertium Development Team
