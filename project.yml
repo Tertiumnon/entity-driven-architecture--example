@@ -1,3 +1,17 @@
 type: web-app
-publish_on:
+slug: entity-driven-architecture-example
+listed_on:
   - https://tertiumnon.github.io
+display_name:
+  en: "Blog Platform - Entity-Driven Architecture"
+summary:
+  en: "Blog platform built with entity-driven architecture: Bun and Elysia backend, SolidJS frontend."
+languages:
+  - en
+default_language: en
+team:
+  - name: Vitalii Balabanov
+    roles:
+      - owner
+      - developer
+    github: Tertiumnon
